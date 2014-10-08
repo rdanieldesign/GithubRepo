@@ -2,25 +2,96 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+//Partials
+@import 'colors';
+
+//Mixins
+@mixin border {
+  border: 1px solid $border-grey;
+}
+
+@mixin border-b {
+  border-bottom: 1px solid $border-grey;
+}
+
+@mixin small-corner {
+  @include border;
+  border-radius: 3px;
+}
+
 // Custom Styles
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-family: Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #fff;
+  font-size: 14px;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
+ul, li, a, h1, h2, h3, h4, h4, h6 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h3 {
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 100%;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+}
+
+.container {
+  @include outer-container;
+}
+
+nav {
+  @include border-b;
+  background-color: $bg-grey;
+  color: $black;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px 0;
+
+  a {
+    color: $black;
+
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
   }
+
+  .logo {
+    font-size: 28px;
+    height: 28px;
+    width: 28px;
+  }
+
+  input {
+    @include small-corner;
+  }
+}
+
+aside {
+  @include span-columns(3);
+}
+
+section {
+  @include span-columns(9);
 }

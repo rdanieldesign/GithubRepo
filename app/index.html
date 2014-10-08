@@ -14,6 +14,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -23,27 +24,177 @@
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
+    <!--  NAVIGATION   -->
 
-        <li>Sass</li>
+    <nav>
+      <div class="container">
+        <a class="logo" href="#"><span class="octicon octicon-mark-github"></span></a>
+        <input type="text" class="nav-search" placeholder="Search Github">
+        <ul class="nav-links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Gist</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <ul class="nav-profile links">
+          <li><a href="#">
+            <img src="" alt="">
+            <span>rdanieldesign</span>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-microscope"></span>
+            <div>Create new...</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-microscope"></span>
+            <div>You have no unread notifications</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-microscope"></span>
+            <div>Settings</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-microscope"></span>
+            <div>Sign Out</div>
+          </a></li>
+        </ul>
+      </div>
+    </nav>
 
+    <!--  END NAVIGATION   -->
 
-        <li>Modernizr</li>
+    <div class="container">
 
+      <!--  SIDEBAR   -->
 
-        <li>Bourbon & Neat</li>
+      <aside>
+        <img src="" alt="" class="profile">
+        <h1>Richard Daniel</h1>
+        <h2>rdanieldesign</h2>
+        <ul class="profile-info">
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            Birmingham, AL
+          </li>
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            rdanieldesign@gmail.com
+          </li>
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            http://www.rdanieldesign.com
+          </li>
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            Joined on Apr 7, 2013
+          </li>
+        </ul>
+        <ul class="stats">
+          <li class="followers">
+            <h3>0</h3>
+            Followers
+          </li>
+          <li class="starred">
+            <h3>0</h3>
+            Followers
+          </li>
+          <li class="following">
+            <h3>0</h3>
+            Followers
+          </li>
+        </ul>
+        <ul class="organizations">
+          <li>
+            <img src="" alt="">
+          </li>
+          <li>
+            <img src="" alt="">
+          </li>
+          <li>
+            <img src="" alt="">
+          </li>
+        </ul>
+      </aside>
 
+      <!--  END SIDEBAR   -->
+      <!--  MAIN CONTENT   -->
 
-        <li>UnderscoreJS</li>
+      <section class="main-content">
+        <ul class="tabs">
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            Contributions
+          </li>
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            Repositories
+          </li>
+          <li>
+            <span class="octicon octicon-microscope"></span>
+            Public Activity
+          </li>
+          <li class="edit-profile">
+            <button>
+              <span class="octicon octicon-microscope"></span>
+              Edit Profile
+            </button>
+          </li>
+        </ul>
+        <div class="repo-options">
+          <form action="" class="repo-search">
+            <input type="text">
+            <button></button>
+          </form>
+          <ul>
+            <li><a href="#">All</a></li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+          </ul>
+          <button>
+            <span class="octicon octicon-microscope"></span>
+            New
+          </button>
+        </div>
+        <ul id="repos">
+          <li>
+            <a href="#"><h3>GithubRepo</h3></a>
+            <span class="time">Updated 2 hours ago</span>
+            <div class="repo-stats">
+              <span>Javascript</span>
+              <a href="">
+                <span class="octicon octicon-microscope"></span>
+                0
+              </a>
+              <a href="">
+                <span class="octicon octicon-microscope"></span>
+                0
+              </a>
+            </div>
+          </li>
+          <li>
+            <a href="#"><h3>GithubRepo</h3></a>
+            <span class="time">Updated 2 hours ago</span>
+            <div class="repo-stats">
+              <span>Javascript</span>
+              <a href="">
+                <span class="octicon octicon-microscope"></span>
+                0
+              </a>
+              <a href="">
+                <span class="octicon octicon-microscope"></span>
+                0
+              </a>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+      <!--  END MAIN CONTENT   -->
     </div>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -53,6 +204,7 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src="scripts/gitAPI.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

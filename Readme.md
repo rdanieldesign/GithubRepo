@@ -1,3 +1,3 @@
-## Yo, I'm a Readme
+## Github Repo Page Rebuild
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+Assignment at The Iron Yard to rebuild my Github Repositories page using Github's API.
