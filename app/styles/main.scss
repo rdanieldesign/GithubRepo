@@ -21,6 +21,22 @@
   border-radius: 3px;
 }
 
+@mixin button {
+  @include small-corner;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+@mixin button-g {
+  @include small-corner;
+  background-color: #60b044;
+  background-image: linear-gradient(#8add6d, #60b044);
+  background-repeat: repeat-x;
+  border-color: #5ca941;
+  color: #fff;
+}
+
 // Custom Styles
 body {
   width: 100%;
@@ -154,6 +170,10 @@ aside {
     @include border-b;
   }
 
+  ul:last-child {
+    border-bottom: 0;
+  }
+
   img {
     width: 100%;
     border-radius: 6px;
@@ -200,6 +220,10 @@ aside {
       margin-bottom: 16px;
     }
 
+    li {
+      display: inline-block;
+    }
+
     img {
       width: 42px;
     }
@@ -208,4 +232,128 @@ aside {
 
 section {
   @include span-columns(9);
+
+  .tabs {
+    width: 100%;
+    color: $grey;
+    border-bottom: 1px solid $lightgrey;
+    margin-bottom: 16px;
+
+    li {
+      @include small-corner;
+      border-bottom: none;
+      padding: 10px 14px 10px 14px;
+      display: inline-block;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-bottom: -1px;
+    }
+
+    .open {
+      border-bottom: 1px solid #fff;
+    }
+
+    li:last-child {
+      border: none;
+      float: right;
+      color: $black;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .edit-profile {
+      padding: 2px 0;
+    }
+
+    button {
+      @include button;
+      padding: 4px 10px;
+    }
+  }
+}
+
+.repo-options {
+  @include border-b;
+  margin-bottom: 30px;
+  overflow: auto;
+
+  form {
+    float: left;
+  }
+
+  input {
+    @include small-corner;
+    font-size: 13px;
+    padding: 8px 12px;
+    width: 260px;
+  }
+
+  button {
+    @include button;
+    padding: 8px 12px;
+  }
+
+  ul {
+    float: left;
+    margin-left: 30px;
+
+    li {
+      display: inline-block;
+      line-height: 33px;
+      margin-right: 7px;
+    }
+  }
+
+  .selected a{
+    color: $black;
+    font-weight: bold;
+  }
+
+  .new-repo {
+    @include button-g;
+    float: right;
+  }
+}
+
+#repos {
+  clear: both;
+
+  li {
+    @include border-b;
+    padding-bottom: 34px;
+    margin-bottom: 30px;
+    overflow: auto;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .time {
+    color: $grey;
+    display: block;
+    font-size: 13px;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .repo-stats {
+    float: right;
+    color: $grey;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+
+    a {
+      color: $grey;
+      margin-left: 10px;
+
+      &:hover {
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
 }
