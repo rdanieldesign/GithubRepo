@@ -240,16 +240,13 @@ section {
     margin-bottom: 16px;
 
     li {
-      @include small-corner;
-      border-bottom: none;
       padding: 10px 14px 10px 14px;
       display: inline-block;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
       margin-bottom: -1px;
     }
 
     .open {
+      @include small-corner;
       border-bottom: 1px solid #fff;
     }
 
