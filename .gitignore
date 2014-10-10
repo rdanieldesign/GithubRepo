@@ -6,3 +6,6 @@ test/bower_components
 .DS_Store
 .idea/*
 octicons
+token.js
+app/scripts/token.js
+dist/scripts/token.js

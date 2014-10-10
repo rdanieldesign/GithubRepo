@@ -37,10 +37,10 @@
           <li><a href="#">Help</a></li>
         </ul>
         <ul class="profile-links">
-          <li><a href="#">
+          <!-- <li><a href="#">
             <img src="images/profile.jpg" alt="">
             <span>rdanieldesign</span>
-          </a></li>
+          </a></li> -->
           <li><a href="#">
             <span class="octicon octicon-plus"></span><span class="arrow"></span>
             <div>Create new...</div>
@@ -68,10 +68,10 @@
       <!--  SIDEBAR   -->
 
       <aside>
-        <img src="images/profile.jpg" alt="" class="profile">
+        <!-- <img src="images/profile.jpg" alt="" class="profile">
         <h1>Richard Daniel</h1>
-        <h2>rdanieldesign</h2>
-        <ul class="profile-info">
+        <h2>rdanieldesign</h2> -->
+        <!-- <ul class="profile-info">
           <li>
             <span class="octicon octicon-location"></span>
             Birmingham, AL
@@ -88,9 +88,9 @@
             <span class="octicon octicon-microscope"></span>
             Joined on Apr 7, 2013
           </li>
-        </ul>
+        </ul> -->
         <ul class="stats">
-          <li class="followers">
+          <!--<li class="followers">
             <h3>0</h3>
             Followers
           </li>
@@ -101,11 +101,11 @@
           <li class="following">
             <h3>0</h3>
             Following
-          </li>
+          </li> -->
         </ul>
         <ul class="organizations">
           <h4>Organizations</h4>
-          <li>
+          <!-- <li>
             <img src="images/js-hacker.jpeg" alt="">
           </li>
           <li>
@@ -114,6 +114,7 @@
           <li>
             <img src="images/js-hacker.jpeg" alt="">
           </li>
+           -->
         </ul>
       </aside>
 
@@ -159,8 +160,8 @@
             New
           </button>
         </div>
-        <ul id="repos">
-          <li>
+        <ul class="repos">
+          <!-- <li>
             <a href="#"><h3>GithubRepo</h3></a>
             <div class="repo-stats">
               <span>Javascript</span>
@@ -174,27 +175,87 @@
               </a>
             </div>
             <span class="time">Updated 2 hours ago</span>
-          </li>
-          <li>
-            <a href="#"><h3>GithubRepo</h3></a>
-            <div class="repo-stats">
-              <span>Javascript</span>
-              <a href="">
-                <span class="octicon octicon-star"></span>
-                0
-              </a>
-              <a href="">
-                <span class="octicon octicon-git-branch"></span>
-                0
-              </a>
-            </div>
-            <span class="time">Updated 2 hours ago</span>
-          </li>
+          </li> -->
         </ul>
       </section>
 
       <!--  END MAIN CONTENT   -->
     </div>
+
+    <!--   TEMPLATE FILES -->
+
+    <script id="nav-info">
+      <li>
+        <a href="<%= html_url %>">
+          <img src="<%= avatar_url %>" alt="">
+          <span><%= login %></span>
+        </a>
+      </li>
+    </script>
+
+    <script id="sidebar-info">
+      <img src="<%= avatar_url %>" alt="" class="profile">
+      <h1><%= name %></h1>
+      <h2><%= login %></h2>
+      <ul class="profile-info">
+        <li>
+          <span class="octicon octicon-location"></span>
+          <%= location %>
+        </li>
+        <li>
+          <span class="octicon octicon-mail"></span>
+          <a href="#"><%= email %></a>
+        </li>
+        <li>
+          <span class="octicon octicon-clock"></span>
+          <a href="#"><%= blog %></a>
+        </li>
+        <li>
+          <span class="octicon octicon-microscope"></span>
+          Joined on <%= created_at %>
+        </li>
+      </ul>
+    </script>
+
+    <script id="sidebar-stats">
+      <li class="followers">
+        <h3><%= followers %></h3>
+        Followers
+      </li>
+      <li class="starred">
+        <h3>0</h3>
+        Starred
+      </li>
+      <li class="following">
+        <h3><%= following %></h3>
+        Following
+      </li>
+    </script>
+
+    <script id="sidebar-orgs">
+        <li>
+          <img src="<%= avatar_url %>" alt="">
+        </li>
+    </script>
+
+    <script id="repos">
+      <li>
+        <a href="<%= html_url %>"><h3><%= name %></h3></a>
+        <div class="repo-stats">
+          <span><%= language %></span>
+          <a href="">
+            <span class="octicon octicon-star"></span>
+            <%= stargazers_count %>
+          </a>
+          <a href="">
+            <span class="octicon octicon-git-branch"></span>
+            <%= forks_count %>
+          </a>
+        </div>
+        <span class="time">Updated <%= updated_at %></span>
+      </li>
+    </script>
+
 
 
     <!-- build:js scripts/vendor.js -->
@@ -204,8 +265,8 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+<script src="scripts/token.js"></script>
         <!-- build:js scripts/main.js -->
-        <script src="scripts/gitAPI.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
