@@ -207,12 +207,12 @@
           <a href="#"><%= email %></a>
         </li>
         <li>
-          <span class="octicon octicon-clock"></span>
+          <span class="octicon octicon-link"></span>
           <a href="#"><%= blog %></a>
         </li>
         <li>
-          <span class="octicon octicon-microscope"></span>
-          Joined on <%= created_at %>
+          <span class="octicon octicon-clock"></span>
+          Joined on <%= $.format.date(created_at, "MMM d, yyyy") %>
         </li>
       </ul>
     </script>
@@ -252,10 +252,9 @@
             <%= forks_count %>
           </a>
         </div>
-        <span class="time">Updated <%= updated_at %></span>
+        <span class="time">Updated <%= $.format.prettyDate(updated_at) %></span>
       </li>
     </script>
-
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -266,6 +265,7 @@
 
 <script src="scripts/token.js"></script>
         <!-- build:js scripts/main.js -->
+        <script src="scripts/date.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
