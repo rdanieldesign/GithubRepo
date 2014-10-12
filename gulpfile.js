@@ -49,6 +49,11 @@ gulp.task('clean', function (cb) {
   });
 });
 
+// Possible bug fix?
+gulp.task('clear', function (done) {
+    return $.cache.clearAll(done);
+});
+
 gulp.task('connect', function () {
   var connect = require('connect');
   var app = connect()

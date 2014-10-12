@@ -7,11 +7,11 @@
 
 //Mixins
 @mixin border {
-  border: 1px solid $border-grey;
+  border: 1px solid $lightgrey;
 }
 
 @mixin border-b {
-  border-bottom: 1px solid $border-grey;
+  border-bottom: 1px solid $lightgrey;
   margin-bottom: 16px;
   padding-bottom: 16px;
 }
@@ -26,6 +26,10 @@
   background-image: linear-gradient(#fcfcfc, #eee);
   font-size: 13px;
   font-weight: bold;
+
+  &:hover {
+    background-image: linear-gradient(#eee, #ddd);
+  }
 }
 
 @mixin button-g {
@@ -72,8 +76,9 @@ h3 {
 
 .container {
   @include outer-container;
-  min-width: 980px;
+  min-width: 1020px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 nav {
@@ -137,23 +142,22 @@ nav {
       display: inline-block;
       margin-right: 14px;
       position: relative;
-      text-align: center;
 
       &:hover div {
-        display: inline-block;
+        display: block;
       }
 
       div {
         background-color: $black;
         color: #fff;
         position: absolute;
-        right: 50%;
         display: none;
-        width: auto;
-        padding: 2px 12px;
-        text-align: center;
+        padding: 0 8px;
         white-space: pre;
         font-size: 11px;
+        border-radius: 3px;
+        margin-top: 6px;
+
 
         &::before {
           content: "";
@@ -164,8 +168,26 @@ nav {
           border-color: transparent transparent $black transparent;
           position: absolute;
           top: -6px;
-          right: 45%;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
         }
+      }
+
+      .create {
+        left: -34px;
+      }
+
+      .notifications {
+        left: -88px;
+      }
+
+      .settings {
+        left: -22px;
+      }
+
+      .signout {
+        left: -26px;
       }
     }
 
@@ -237,6 +259,10 @@ aside {
       font-size: 0.8em;
       color: $lightgrey;
       width: 32%;
+
+      &:hover {
+        color: $blue;
+      }
     }
   }
 
@@ -336,6 +362,10 @@ section {
   .new-repo {
     @include button-g;
     float: right;
+
+    &:hover {
+      background-image: linear-gradient(#85D36A, #56A03D);
+    }
   }
 }
 
