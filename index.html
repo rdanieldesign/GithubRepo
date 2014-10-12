@@ -1,0 +1,217 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>GithubRepo</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <!--  NAVIGATION   -->
+
+    <nav>
+      <div class="container">
+        <a class="logo" href="#"><span class="octicon octicon-mark-github"></span></a>
+        <input type="text" class="nav-search" placeholder="Search Github">
+        <ul class="nav-links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Gist</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+        <ul class="profile-links">
+          <li><a href="#">
+            <span class="octicon octicon-plus"></span><span class="arrow"></span>
+            <div class="create">Create new...</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-inbox"></span>
+            <div class="notifications">You have no unread notifications</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-gear"></span>
+            <div class="settings">Settings</div>
+          </a></li>
+          <li><a href="#">
+            <span class="octicon octicon-sign-out"></span>
+            <div class="signout">Sign Out</div>
+          </a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--  END NAVIGATION   -->
+
+    <div class="container">
+
+      <!--  SIDEBAR   -->
+
+      <aside>
+        <ul class="stats"></ul>
+        <ul class="organizations">
+          <h4>Organizations</h4>
+        </ul>
+      </aside>
+
+      <!--  END SIDEBAR   -->
+      <!--  MAIN CONTENT   -->
+
+      <section class="main-content">
+        <ul class="tabs">
+          <li>
+            <span class="octicon octicon-diff-added"></span>
+            Contributions
+          </li>
+          <li class="open">
+            <span class="octicon octicon-repo"></span>
+            Repositories
+          </li>
+          <li>
+            <span class="octicon octicon-rss"></span>
+            Public Activity
+          </li>
+          <li class="edit-profile">
+            <button>
+              <span class="octicon octicon-pencil"></span>
+              Edit Profile
+            </button>
+          </li>
+        </ul>
+        <div class="repo-options">
+          <form action="" class="repo-search">
+            <input type="text" placeholder="Find a repository...">
+            <button>Search</button>
+          </form>
+          <ul>
+            <li class="selected"><a href="#">All</a></li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+          </ul>
+          <button class="new-repo">
+            <span class="octicon octicon-repo"></span>
+            New
+          </button>
+        </div>
+        <ul class="repos"></ul>
+      </section>
+
+      <!--  END MAIN CONTENT   -->
+
+    </div>
+    <div class="container">
+
+    <!--  FOOTER   -->
+
+    <footer>
+      <ul class="footer-left">
+        <li>© 2014 Github,Inc.</li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <span class="octicon octicon-mark-github footer-icon"></span>
+      <ul class="footer-right">
+        <li><a href="#">Status</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">Training</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </footer>
+
+    <!--  END FOOTER   -->
+    </div>
+
+    <!--   TEMPLATE FILES -->
+
+    <script id="nav-info">
+      <li>
+        <a href="<%= html_url %>">
+          <img src="<%= avatar_url %>" alt="">
+          <span><%= login %></span>
+        </a>
+      </li>
+    </script>
+
+    <script id="sidebar-info">
+      <img src="<%= avatar_url %>" alt="" class="profile">
+      <h1><%= name %></h1>
+      <h2><%= login %></h2>
+      <ul class="profile-info">
+        <li>
+          <span class="octicon octicon-location"></span>
+          <%= location %>
+        </li>
+        <li>
+          <span class="octicon octicon-mail"></span>
+          <a href="#"><%= email %></a>
+        </li>
+        <li>
+          <span class="octicon octicon-link"></span>
+          <a href="#"><%= blog %></a>
+        </li>
+        <li>
+          <span class="octicon octicon-clock"></span>
+          Joined on <%= $.format.date(created_at, "MMM d, yyyy") %>
+        </li>
+      </ul>
+    </script>
+
+    <script id="sidebar-stats">
+      <li class="followers">
+        <h3><%= followers %></h3>
+        Followers
+      </li>
+      <li class="starred">
+        <h3></h3>
+        Starred
+      </li>
+      <li class="following">
+        <h3><%= following %></h3>
+        Following
+      </li>
+    </script>
+
+    <script id="sidebar-orgs">
+        <li>
+          <img src="<%= avatar_url %>" alt="">
+        </li>
+    </script>
+
+    <script id="repos">
+      <li>
+        <a href="<%= html_url %>"><h3><%= name %></h3></a>
+        <div class="repo-stats">
+          <span><%= language %></span>
+          <a href="">
+            <span class="octicon octicon-star"></span>
+            <%= stargazers_count %>
+          </a>
+          <a href="">
+            <span class="octicon octicon-git-branch"></span>
+            <%= forks_count %>
+          </a>
+        </div>
+        <span class="time">Updated <%= $.format.prettyDate(updated_at) %></span>
+      </li>
+    </script>
+
+    <script src="scripts/vendor.js"></script>
+
+<script src="scripts/token.js"></script>
+        <script src="scripts/main.js"></script>
+</body>
+</html>
